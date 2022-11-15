@@ -16,11 +16,11 @@
                     <tbody> 
                         <% products.forEach(p => { %> 
                             <tr> 
-                                <td><%= p.title %></td>
-                                <td><%= p.CartItem.quantity %></td>
+                                <td><%= p.product.title %></td>
+                                <td><%= p.quantity %></td>
                                 <td>
                                     <form action="/cart-delete-item" method="POST">
-                                        <input type="hidden" value="<%= p.id %>" name="productId">
+                                        <input type="hidden" value="<%= p.product._id %>" name="productId">
                                         <button class="btn btn-danger" type="submit">Delete</button>
                                     </form>
                                 </td>

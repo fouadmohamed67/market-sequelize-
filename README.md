@@ -1,5 +1,5 @@
 # market-sequelize-
-project with nodejs(express) with sequelize 
+project with nodejs(express) with sequelize (Focus on applying the structure of mvc , mysql ,sequelize ,mongoDB , routes and  handling requests )
 # Description 
 1. using java script (nodejs express)
 2. applaying model view controller architecture to build the project

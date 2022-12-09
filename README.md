@@ -9,4 +9,9 @@ project with nodejs(express) with sequelize
 6. cart model implemented and finished
 7. every cart become a order after user check out the cart
 8. at the view side i have used template engines: ejs to handle front end side  
-
+# new things
+1. add authentication (login,signUp,forgetPassword) logic
+2. provide sending email on signUP and forgetPassword to reset password
+3. use session snd cookies in login logic
+4. validate any from and coming data from user
+5. add middlewares 

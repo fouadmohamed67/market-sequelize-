@@ -10,6 +10,8 @@
             <hr>
             <h2><%= product.price %>$</h2>
             <p><%= product.description %></p>
-            <%- include('../includes/form-addToCart.ejs',{product:product}) %> 
+            <% if(isAuth){ %> 
+                <%- include('../includes/form-addToCart.ejs',{product:product}) %> 
+            <% } %>
         </div>
     </main>

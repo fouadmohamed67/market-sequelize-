@@ -1,0 +1,34 @@
+<%- include('../includes/head.ejs') %>
+    <link rel="stylesheet" href="/css/forms.css">
+    <link rel="stylesheet" href="/css/product.css">
+    <link rel="stylesheet" href="/css/messages.css">
+    
+</head>
+
+<body>
+   <%- include('../includes/navigation.ejs') %>
+    <% if(errorMessage){ %>
+        <div class="user-message" role="alert"><%= errorMessage  %></div>
+    
+    <% } %>  
+  <div class="loginPage">
+    <form class="product-form" action="/login" method="POST">
+        <input type="hidden" name="_csrf"  value="<%= csrfToken %>" >
+    
+            <div class="form-control">
+                <label for="username">email</label>
+                <input    type="text" name="email" id="email" value="<%= oldInput.email %>" >
+    
+            </div>
+            <div class="form-control">
+                <label for="password">password</label>
+                <input  type="password" name="password" id="password" value="<%= oldInput.password %>">
+            </div> 
+    
+             <button class="btn" type="submit">login </button>
+        </form>
+        <a href="/forgetPassword" class="center-div" >forget password?</a>
+  </div>
+
+
+   <%- include('../includes/end.ejs') %>

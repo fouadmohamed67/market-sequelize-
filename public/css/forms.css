@@ -18,3 +18,14 @@
 .form-control input:focus {
     outline-color: #00695c;
 }
+.loginPage{
+display: flex;
+flex-direction: column;
+justify-content: center;
+}
+.center-div{
+    margin: auto;
+}
+.form-control .invalid{
+    border-color: red;
+}

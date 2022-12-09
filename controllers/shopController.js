@@ -1,5 +1,4 @@
- 
-const Product=require('../models/products'); 
+ const Product=require('../models/products'); 
 const Order=require('../models/orders')
 const getallProducts=(req,res)=>{
         Product
@@ -9,7 +8,7 @@ const getallProducts=(req,res)=>{
             {
                 prods:rows,
                 pageTitle:'all products',
-                path:"/products"
+                path:"/products" 
             })  
         }).catch(error=>{
             console.log(error)
@@ -24,7 +23,8 @@ const getIndex=(req,res)=>{
         {
             prods:rows,
             pageTitle:'shop',
-            path:"/"
+            path:"/", 
+            csrfToken:req.csrfToken()
         })  
     }).catch(error=>{
         console.log(error)
@@ -37,7 +37,7 @@ const getCart=(req,res)=>{
         {
             pageTitle:'cart',
             path:'/cart',
-            products:products.cart.items
+            products:products.cart.items 
         })
     }) 
     
@@ -72,7 +72,7 @@ const getCheckOut=(req,res)=>{
     res.render('shop/checkout',
     {
         pageTitle:'checkout',
-        path:'/checkout'
+        path:'/checkout' 
     })
 }
 const postOrder=(req,res)=>{
@@ -82,7 +82,7 @@ const postOrder=(req,res)=>{
          
         const order=new Order({
             products:products.cart.items,
-            user:{name:req.user.username,userId:req.user._id}
+            user:{name:req.user.email,userId:req.user._id}
             
     })
     return order.save()
@@ -106,7 +106,7 @@ const getorders=(req,res)=>{
         {
             orders:orders,
             pageTitle:'orders',
-            path:'/orders'
+            path:'/orders' 
         })
     }) 
     .catch(err=>{console.log(err)})
@@ -121,7 +121,7 @@ const getProduct=(req,res)=>{
         { 
             pageTitle:'product details',
             product:row,
-            path:'/products'
+            path:'/products' 
         })
     }).then(err=>{
         console.log(err) 

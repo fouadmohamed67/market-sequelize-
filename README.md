@@ -14,4 +14,5 @@ project with nodejs(express) with sequelize
 2. provide sending email on signUP and forgetPassword to reset password
 3. use session snd cookies in login logic
 4. validate any from and coming data from user
+5. authorize the main functions in project 
 5. add middlewares 
